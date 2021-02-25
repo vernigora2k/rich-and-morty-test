@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Navbar } from './components/Navbar';
+import { urlCharacters } from './js/config';
+import { getData } from './js/controller';
+import { Characters } from './pages/Characters';
+import { Episodes } from './pages/Episodes';
+import { Locations } from './pages/Locations';
+
+export const Context = React.createContext()
 
 function App() {
+  const [itemsList, setItemsList] = useState(null)
+  
+  async function fetchData(url=urlCharacters) {
+    const {info, results} = await getData(url)
+    console.log(info)
+    console.log(results)
+    setItemsList(results)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Context.Provider value={{itemsList, fetchData}}>
+      <BrowserRouter>
+        <Navbar />
+        <div className="container pt-5">
+          <Switch>
+            <Route path={'/'} exact component={Characters}  />
+            <Route path={'/locations'} component={Locations} />
+            <Route path={'/episodes'} component={Episodes} />
+          </Switch>
+        </div>
+      </BrowserRouter>
+    </Context.Provider>
   );
 }
 
