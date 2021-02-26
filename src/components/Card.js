@@ -5,7 +5,7 @@ import './card.scss'
 
 export default function Card(data) {
     const {item} = data
-    console.log(item)
+    // console.log(item)
     return (
         <div className="card-body">
             <h6 className="card-title">{item.name}</h6>

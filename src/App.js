@@ -11,16 +11,22 @@ export const Context = React.createContext()
 
 function App() {
   const [itemsList, setItemsList] = useState(null)
+  const [prevPage, setPrevPage] = useState(null)
+  const [nextPage, setNextPage] = useState(null)
+  const [currentUrl, setCurrentUrl] = useState(urlCharacters)
   
-  async function fetchData(url=urlCharacters) {
-    const {info, results} = await getData(url)
+  async function fetchData(currentUrl) {
+    const {info, results} = await getData(currentUrl)
     console.log(info)
     console.log(results)
+    console.log(info.next)
     setItemsList(results)
+    setPrevPage(info.prev)
+    setNextPage(info.next)
   }
 
   return (
-    <Context.Provider value={{itemsList, fetchData}}>
+    <Context.Provider value={{ itemsList, fetchData, prevPage, nextPage, currentUrl, setCurrentUrl }}>
       <BrowserRouter>
         <Navbar />
         <div className="container pt-5">
