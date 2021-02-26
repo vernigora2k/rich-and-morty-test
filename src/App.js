@@ -6,6 +6,7 @@ import { getData } from './js/controller';
 import { Characters } from './pages/Characters';
 import { Episodes } from './pages/Episodes';
 import { Locations } from './pages/Locations';
+var _ = require('lodash');
 
 export const Context = React.createContext()
 
@@ -17,10 +18,10 @@ function App() {
   
   async function fetchData(currentUrl) {
     const {info, results} = await getData(currentUrl)
-    console.log(info)
-    console.log(results)
-    console.log(info.next)
-    setItemsList(results)
+    setItemsList(prev => { 
+      if (!prev) return results
+      return _.uniqBy([...prev, ...results], 'id')
+    })
     setPrevPage(info.prev)
     setNextPage(info.next)
   }
