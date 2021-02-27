@@ -9,7 +9,9 @@ export default function Card(data) {
     return (
         <div className="card-body">
             <h6 className="card-title">{item.name}</h6>
-            <img className="card-img" src={item.image} />
+            {item.image ? <img className="card-img" src={item.image} /> : ''}
+            {item.air_date ? <span>{item.air_date}</span> : ''}
+            {item.dimension ? <span>{item.dimension}</span> : ''}
         </div>
     )
 }

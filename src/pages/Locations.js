@@ -36,6 +36,7 @@ export const Locations = () => {
             <h1>Locations</h1>
             <div className="locations-items">
                 {itemsList.map((item, i) => {
+                    console.log(item)
                     return <Card item={item} key={i} />
                 })}
             </div>
