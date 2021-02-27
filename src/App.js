@@ -11,23 +11,35 @@ var _ = require('lodash');
 export const Context = React.createContext()
 
 function App() {
-  const [itemsList, setItemsList] = useState(null)
+  const [itemsList, setItemsList] = useState([])
   const [prevPage, setPrevPage] = useState(null)
   const [nextPage, setNextPage] = useState(null)
   const [currentUrl, setCurrentUrl] = useState(urlCharacters)
+
+    // const handleScroll = () => {
+    //     const currentPosition = window.pageYOffset
+    //     const allWindowHeight = document.body.scrollHeight
+    //     const clientWindowHeight = document.documentElement.clientHeight
+        
+    //     if (allWindowHeight === clientWindowHeight + currentPosition) {
+    //         setCurrentUrl(nextPage)
+    //     }
+    // }
   
   async function fetchData(currentUrl) {
+    console.log('fetch')
     const {info, results} = await getData(currentUrl)
-    setItemsList(prev => { 
-      if (!prev) return results
-      return _.uniqBy([...prev, ...results], 'id')
-    })
     setPrevPage(info.prev)
     setNextPage(info.next)
+    // setItemsList(prev => { 
+    //   if (!prev) return results
+    //   return _.uniqBy([...prev, ...results], 'id')
+    // })
+    setItemsList(prev =>  _.uniqBy([...prev, ...results], 'id'))
   }
 
   return (
-    <Context.Provider value={{ itemsList, fetchData, prevPage, nextPage, currentUrl, setCurrentUrl }}>
+    <Context.Provider value={{ itemsList, fetchData, prevPage, nextPage, setItemsList }}>
       <BrowserRouter>
         <Navbar />
         <div className="container pt-5">
