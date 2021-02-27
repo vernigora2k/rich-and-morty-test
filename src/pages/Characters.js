@@ -5,7 +5,7 @@ import { urlCharacters } from '../js/config'
 import './characters.scss'
 
 export const Characters = () => {
-    const { itemsList, fetchData, prevPage, nextPage, setItemsList } = useContext(Context)
+    const { itemsList, fetchData, nextPage, setItemsList } = useContext(Context)
     const [currentUrl, setCurrentUrl] = useState(urlCharacters)
 
     const handleScroll = () => {

@@ -29,10 +29,8 @@ export const Locations = () => {
         }
     }, [nextPage, currentUrl])
     
-
     if(!itemsList) return null
     
-
     return (
         <Fragment>
             <h1>Locations</h1>

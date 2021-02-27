@@ -15,26 +15,12 @@ function App() {
   const [prevPage, setPrevPage] = useState(null)
   const [nextPage, setNextPage] = useState(null)
   const [currentUrl, setCurrentUrl] = useState(urlCharacters)
-
-    // const handleScroll = () => {
-    //     const currentPosition = window.pageYOffset
-    //     const allWindowHeight = document.body.scrollHeight
-    //     const clientWindowHeight = document.documentElement.clientHeight
-        
-    //     if (allWindowHeight === clientWindowHeight + currentPosition) {
-    //         setCurrentUrl(nextPage)
-    //     }
-    // }
   
   async function fetchData(currentUrl) {
-    console.log('fetch')
+    if (!currentUrl) return null
     const {info, results} = await getData(currentUrl)
     setPrevPage(info.prev)
     setNextPage(info.next)
-    // setItemsList(prev => { 
-    //   if (!prev) return results
-    //   return _.uniqBy([...prev, ...results], 'id')
-    // })
     setItemsList(prev =>  _.uniqBy([...prev, ...results], 'id'))
   }
 
