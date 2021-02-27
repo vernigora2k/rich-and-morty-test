@@ -34,7 +34,7 @@ export const Characters = () => {
     return (
         <Fragment>
             <h1>Characters</h1>
-            <div className="characters-items">
+            <div className="characters-items" id="characters-items">
                 {itemsList.map((item, i) => {
                     console.log(item)
                     return <Card item={item} key={i} />
