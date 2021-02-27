@@ -19,6 +19,7 @@ function App() {
   async function fetchData(currentUrl) {
     if (!currentUrl) return null
     const {info, results} = await getData(currentUrl)
+    if (!info || !results) return
     setPrevPage(info.prev)
     setNextPage(info.next)
     setItemsList(prev =>  _.uniqBy([...prev, ...results], 'id'))
