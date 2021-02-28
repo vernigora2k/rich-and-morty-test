@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/rich-and-morty-test/static/css/main.a749e085.chunk.css",
-    "main.js": "/rich-and-morty-test/static/js/main.b472b3a7.chunk.js",
-    "main.js.map": "/rich-and-morty-test/static/js/main.b472b3a7.chunk.js.map",
+    "main.js": "/rich-and-morty-test/static/js/main.2cc0329f.chunk.js",
+    "main.js.map": "/rich-and-morty-test/static/js/main.2cc0329f.chunk.js.map",
     "runtime-main.js": "/rich-and-morty-test/static/js/runtime-main.4bf70782.js",
     "runtime-main.js.map": "/rich-and-morty-test/static/js/runtime-main.4bf70782.js.map",
     "static/js/2.16f788e9.chunk.js": "/rich-and-morty-test/static/js/2.16f788e9.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.4bf70782.js",
     "static/js/2.16f788e9.chunk.js",
     "static/css/main.a749e085.chunk.css",
-    "static/js/main.b472b3a7.chunk.js"
+    "static/js/main.2cc0329f.chunk.js"
   ]
 }
