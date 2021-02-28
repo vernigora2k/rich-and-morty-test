@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
-import { urlCharacters } from './js/config';
 import { getData } from './js/controller';
 import { Characters } from './pages/Characters';
 import { Episodes } from './pages/Episodes';
