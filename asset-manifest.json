@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/rich-and-morty-test/static/css/main.a749e085.chunk.css",
+    "main.js": "/rich-and-morty-test/static/js/main.e2de41a7.chunk.js",
+    "main.js.map": "/rich-and-morty-test/static/js/main.e2de41a7.chunk.js.map",
+    "runtime-main.js": "/rich-and-morty-test/static/js/runtime-main.4bf70782.js",
+    "runtime-main.js.map": "/rich-and-morty-test/static/js/runtime-main.4bf70782.js.map",
+    "static/js/2.16f788e9.chunk.js": "/rich-and-morty-test/static/js/2.16f788e9.chunk.js",
+    "static/js/2.16f788e9.chunk.js.map": "/rich-and-morty-test/static/js/2.16f788e9.chunk.js.map",
+    "static/js/3.fc69b8f0.chunk.js": "/rich-and-morty-test/static/js/3.fc69b8f0.chunk.js",
+    "static/js/3.fc69b8f0.chunk.js.map": "/rich-and-morty-test/static/js/3.fc69b8f0.chunk.js.map",
+    "index.html": "/rich-and-morty-test/index.html",
+    "static/css/main.a749e085.chunk.css.map": "/rich-and-morty-test/static/css/main.a749e085.chunk.css.map",
+    "static/js/2.16f788e9.chunk.js.LICENSE.txt": "/rich-and-morty-test/static/js/2.16f788e9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4bf70782.js",
+    "static/js/2.16f788e9.chunk.js",
+    "static/css/main.a749e085.chunk.css",
+    "static/js/main.e2de41a7.chunk.js"
+  ]
+}
