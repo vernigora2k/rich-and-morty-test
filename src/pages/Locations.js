@@ -54,16 +54,15 @@ export const Locations = () => {
     
     return (
         <Fragment>
-        <nav className="characters__search-bar bg-primary">
+            <nav className="characters__search-bar bg-primary">
                 <form className="characters__form" onSubmit={handleSubmit}>
-                    <span>name: </span>
-                    <input onChange={handleChangeName}></input>
-                    <input onChange={handleChangeType}></input>
-                    <input onChange={handleChangeDimension}></input>
-                    <input type="submit" value="search" />
+                    <input className="form-control" onChange={handleChangeName} placeholder="name..."></input>
+                    <input className="form-control" onChange={handleChangeType} placeholder="type..."></input>
+                    <input className="form-control" onChange={handleChangeDimension} placeholder="dimension..."></input>
+                    <input className="btn btn-warning" type="submit" value="search" />
                 </form>
             </nav>
-            <h1>Locations</h1>
+            <h1 className="pt-1 pb-1">Locations</h1>
             <div className="locations-items">
                 {itemsList.map((item, i) => {
                     console.log(item)

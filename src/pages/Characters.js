@@ -63,26 +63,25 @@ export const Characters = () => {
         <Fragment>
             <nav className="characters__search-bar bg-primary">
                 <form className="characters__form" onSubmit={handleSubmit}>
-                    <span>name: </span>
-                    <input onChange={handleChangeName}></input>
-                    <select id="select-status" onChange={handleChangeStatus}>
+                    <input className="form-control" onChange={handleChangeName} placeholder="name..."></input>
+                    <select className="custom-select" id="select-status" onChange={handleChangeStatus}>
                         <option value="" selected disabled hidden>Choose status</option>
                         <option value="&status=alive">alive</option>
                         <option value="&status=dead">dead</option>
                         <option value="&status=unknown">unknown</option>
                     </select>
-                    <input onChange={handleChangeSpecies}></input>
-                    <select id="select-gender" onChange={handleChangeGender}>
+                    <input className="form-control" onChange={handleChangeSpecies} placeholder="species..."></input>
+                    <select className="custom-select" id="select-gender" onChange={handleChangeGender}>
                         <option value="" selected disabled hidden>Choose gender</option>
                         <option value="&gender=female">female</option>
                         <option value="&gender=male">male</option>
                         <option value="&gender=genderless">genderless</option>
                         <option value="&gender=unknown">unknown</option>
                     </select>
-                    <input type="submit" value="search" />
+                    <input className="btn btn-warning" type="submit" value="search" />
                 </form>
             </nav>
-            <h1>Characters</h1>
+            <h1 className="pt-1 pb-1">Characters</h1>
             <div className="characters__items" id="characters__items">
                 {itemsList.map((item, i) => {
                     return <Card item={item} key={i} />

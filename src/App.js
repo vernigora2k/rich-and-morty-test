@@ -14,7 +14,6 @@ function App() {
   const [itemsList, setItemsList] = useState([])
   const [prevPage, setPrevPage] = useState(null)
   const [nextPage, setNextPage] = useState(null)
-  const [currentUrl, setCurrentUrl] = useState(urlCharacters)
   
   async function fetchData(currentUrl) {
     if (!currentUrl) return null
@@ -29,7 +28,7 @@ function App() {
     <Context.Provider value={{ itemsList, fetchData, prevPage, nextPage, setItemsList }}>
       <BrowserRouter>
         <Navbar />
-        <div className="container pt-5">
+        <div className="container pt-3">
           <Switch>
             <Route path={'/'} exact component={Characters}  />
             <Route path={'/locations'} component={Locations} />
